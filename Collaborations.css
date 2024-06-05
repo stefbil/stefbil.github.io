@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: linear-gradient(#c7d0ec, white);
+  background-image: linear-gradient(var(--custom-color-6), white);
 }
 
 .u-section-1 .u-sheet-1 {
@@ -172,7 +172,7 @@
     height: 192px;
   }
 } .u-section-3 {
-  background-image: linear-gradient(white, #c7d0ec);
+  background-image: linear-gradient(white, var(--custom-color-6));
 }
 
 .u-section-3 .u-sheet-1 {
