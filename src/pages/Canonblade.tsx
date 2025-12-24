@@ -7,17 +7,17 @@ const discography = [
   {
     title: "Latest Releases",
     tracks: [
-      { name: "Dejavu", type: "Single", year: "2025" },
-      { name: "Journey", type: "Single", year: "2022" },
-      { name: "Rebirth", type: "Single", year: "2021" },
+      { name: "Dejavu", type: "Single", year: "2025", image: "/track_art/DejaVu.png" },
+      { name: "Journey", type: "Single", year: "2022", image: "/track_art/Journey.png" },
+      { name: "Rebirth", type: "Single", year: "2021", image: "/track_art/Rebirth.png" },
     ],
   },
   {
     title: "Featured Works",
     tracks: [
-      { name: "Debug", type: "Single", year: "2017" },
-      { name: "This Feeling", type: "Single", year: "2020" },
-      { name: "Rising Sun", type: "Single", year: "2019" },
+      { name: "Debug", type: "Single", year: "2017", image: "/track_art/Debug.png" },
+      { name: "This Feeling", type: "Single", year: "2020", image: "/track_art/This Feeling.png" },
+      { name: "Rising Sun", type: "Single", year: "2019", image: "/track_art/RisingSun.jpg" },
     ],
   },
 ];
@@ -166,9 +166,11 @@ const Canonblade = () => {
                         className="flex items-center justify-between p-3 rounded-lg bg-background/50 hover:bg-primary/5 transition-colors group"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                            <Play size={16} className="text-primary" />
-                          </div>
+                          <img
+                            src={track.image}
+                            alt={track.name}
+                            className="w-12 h-12 rounded-lg object-cover shadow-sm group-hover:shadow-md transition-shadow"
+                          />
                           <div>
                             <div className="font-medium text-foreground">
                               {track.name}
