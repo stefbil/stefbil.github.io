@@ -139,20 +139,21 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-            <ArrowDown size={24} />
-          </a>
-        </motion.div>
       </div>
+
+      <motion.div
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+          <ArrowDown size={24} />
+        </a>
+      </motion.div>
     </section>
   );
 };
