@@ -65,6 +65,14 @@ const Header = () => {
           ))}
           <li>
             <Link
+              to="/publications"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Publications
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/music"
               className="flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm hover:bg-primary/20 transition-colors duration-200"
             >
@@ -98,6 +106,15 @@ const Header = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/publications"
+                  className="text-lg text-muted-foreground hover:text-primary transition-colors duration-200"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Publications
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/music"
