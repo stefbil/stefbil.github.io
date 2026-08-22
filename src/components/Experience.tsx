@@ -83,7 +83,7 @@ const Experience = () => {
                         exp.type === "primary" ? "border-primary/30" : "border-accent/30"
                       }`}
                     >
-                      <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex flex-col md:flex-row items-start justify-between gap-3 md:gap-4 mb-4">
                         <div>
                           <h3 className="font-mono font-bold text-foreground text-lg">
                             {exp.title}
@@ -92,7 +92,7 @@ const Experience = () => {
                             {exp.company}
                           </p>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground whitespace-nowrap">
+                        <div className="flex items-center gap-1 text-xs text-muted-foreground md:whitespace-nowrap">
                           <Calendar size={12} />
                           {exp.period}
                         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Music } from "lucide-react";
+import { Menu, X, Music, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -13,6 +14,8 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,10 +34,22 @@ const Header = () => {
       }`}
     >
       <nav className="section-container flex items-center justify-between h-20">
-        <a href="#" className="font-mono text-xl font-bold tracking-tight">
-          <span className="gradient-text">SB</span>
-          <span className="text-muted-foreground">_</span>
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="theme-toggle"
+            aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+            title={`Switch to ${isDark ? "light" : "dark"} theme`}
+          >
+            <Sun className="theme-toggle-sun" size={16} aria-hidden="true" />
+            <Moon className="theme-toggle-moon" size={16} aria-hidden="true" />
+          </button>
+          <a href="#" className="font-mono text-xl font-bold tracking-tight">
+            <span className="gradient-text">SB</span>
+            <span className="text-muted-foreground">_</span>
+          </a>
+        </div>
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-8">

@@ -6,55 +6,61 @@
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 210 40% 98%;
+    --background: 180 20% 97%;
+    --foreground: 220 30% 13%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 13%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 13%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 174 74% 34%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 180 16% 91%;
+    --secondary-foreground: 220 30% 18%;
 
-    --muted: 220 20% 14%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 180 14% 92%;
+    --muted-foreground: 220 12% 42%;
 
-    --accent: 280 70% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 58% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 175 80% 50%;
+    --border: 210 18% 82%;
+    --input: 210 18% 82%;
+    --ring: 174 74% 34%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(280 70% 60%), hsl(320 70% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 20% 4%) 0%, hsl(220 25% 8%) 50%, hsl(220 20% 4%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(174 74% 34%), hsl(194 72% 38%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 58% 45%), hsl(320 58% 43%));
+    --gradient-hero: linear-gradient(180deg, hsl(180 20% 97%) 0%, hsl(180 18% 94%) 50%, hsl(180 20% 97%) 100%);
     
-    --glow-primary: 0 0 60px hsl(175 80% 50% / 0.3);
-    --glow-accent: 0 0 60px hsl(280 70% 60% / 0.3);
+    --glow-primary: 0 0 60px hsl(174 74% 34% / 0.18);
+    --glow-accent: 0 0 60px hsl(280 58% 45% / 0.16);
     
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s ease;
 
-    --sidebar-background: 220 20% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 20% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 20% 18%;
-    --sidebar-ring: 175 80% 50%;
+    --sidebar-background: 180 18% 94%;
+    --sidebar-foreground: 220 30% 13%;
+    --sidebar-primary: 174 74% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 16% 89%;
+    --sidebar-accent-foreground: 220 30% 18%;
+    --sidebar-border: 210 18% 82%;
+    --sidebar-ring: 174 74% 34%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 70% 60%), hsl(320 70% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 4%) 0%, hsl(220 25% 8%) 50%, hsl(220 20% 4%) 100%);
+    --glow-primary: 0 0 60px hsl(175 80% 50% / 0.3);
+    --glow-accent: 0 0 60px hsl(280 70% 60% / 0.3);
   }
 
   .dark {
@@ -92,11 +98,43 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Mono', monospace;
   }
+}
+
+.theme-toggle {
+  @apply relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/80 bg-card/80 text-muted-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+.theme-toggle-sun,
+.theme-toggle-moon {
+  position: absolute;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.theme-toggle-sun {
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.6);
+}
+
+.theme-toggle-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.dark .theme-toggle-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.dark .theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.6);
 }
 
 @layer components {
