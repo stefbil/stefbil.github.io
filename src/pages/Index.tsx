@@ -7,11 +7,13 @@ import PublicationsPreview from "@/components/PublicationsPreview";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SocialRail from "@/components/SocialRail";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Header />
+      <SocialRail />
       <Hero />
       <About />
       <Experience />

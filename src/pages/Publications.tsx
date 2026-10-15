@@ -19,20 +19,37 @@ type Publication = {
 
 const publications: Publication[] = [
   {
-    title: "Intelligent Adaptive De-Essing with Automatic Sibilance Tracking",
-    venue: "Audio Engineering Society",
+    title: "A Computational Model for Predicting Perceived Tension in Electronic Dance Music Buildups",
+    venue: "SMC26, Zagreb · with Sofia Dahl",
     year: "2026",
-    abstract: "This paper presents a novel adaptive de-essing algorithm that automatically tracks sibilance in real-time audio signals. The proposed method utilizes spectral analysis and machine learning techniques to dynamically adjust the de-essing parameters, resulting in improved vocal clarity and reduced artifacts compared to traditional static de-essing approaches.",
-    tags: ["Audio Research", "DSP", "Machine Learning"],
+    abstract: "A computational model of perceived tension in EDM build-ups, grounded in the Gestalt principles of pitch proximity, timbral similarity and temporal proximity. A composite Tension Index is derived from pitch, timbre and temporal-density features. In a continuous-rating study, 14 listeners rated twelve excerpts spanning breakdown, build-up and drop; accounting for a 2 s response lag, the model correlated with listener ratings at mean r = .57 (95% CI [.51, .62]), with high inter-rater reliability (ICC .85–.95).",
+    tags: ["Music Perception", "MIR", "Listening Study"],
+    sourceUrl: "https://github.com/stefbil/tensionmodel",
+  },
+  {
+    title: "EDM Break Routines: Grouping Percept and Action Tendency",
+    venue: "GTA 2026, Berlin \u00b7 Abstract & talk \u00b7 with Sofia Dahl",
+    year: "2026",
+    abstract: "How EDM break routines (breakdown, build-up and drop) shape dancers' action tendencies through changes in timbre, loudness and rhythmic density. We present a model of musical tension built on Gestalt grouping principles, validated against listeners' continuous tension ratings and compared with motion data from earlier studies. Presented at the 24th Scientific Conference of the Society for Gestalt Theory and its Applications.",
+    tags: ["Music Perception", "Gestalt", "Embodiment"],
+    sourceUrl: "https://www.gta-conferences.net/",
+  },
+  {
+    title: "Intelligent Adaptive De-Essing with Automatic Sibilance Tracking",
+    venue: "AES 160th Convention, Copenhagen · Express Paper 10268",
+    year: "2026",
+    abstract: "A real-time adaptive de-esser, built in JUCE, that automatically detects and suppresses sibilant frequencies. A derivative-based frequency tracker estimates a spectral-centroid-like statistic without the cost of an FFT, combined with dual-path envelope detection and relative threshold logic to separate sibilance from the wideband signal. A dynamic harmonic exciter restores high-frequency presence between sibilant events. Across three vocal files, adaptive tracking improved attenuation-frequency alignment over static processing by 99.58 Hz on average.",
+    tags: ["Audio Research", "DSP", "Real-time Audio"],
     sourceUrl: "https://aes.org/publications/elibrary-page/?id=23182",
   },
   {
-    title: "A SINGLE-PARAMETER AUDITORY DISTANCE RENDERER FOR MUSIC PRODUCTION",
-    venue: "DAFx26",
+    title: "A Perceptually Inspired Single Parameter Auditory Distance Renderer for Music Production",
+    venue: "DAFx26, MIT, Cambridge MA · Demo paper",
     year: "2026",
-    abstract: "This paper introduces a single-parameter auditory distance renderer designed for music production applications. The proposed renderer simplifies the process of simulating spatial audio effects by allowing users to control perceived distance with a single parameter, while maintaining high fidelity and naturalness in the rendered sound field.",
-    tags: ["Audio Technology", "DSP"],
-    sourceUrl: "",
+    abstract: "A real-time VST3 plugin that derives five correlated auditory distance cues from a single control and keeps them mutually coherent by construction, grounded in the psychoacoustics of distance perception. In a headphone listening test with 18 participants, the coupled renderer roughly halved distance placement error compared with an uncoupled manual mix and was unanimously preferred on composite spatial quality.",
+    tags: ["Spatial Audio", "Psychoacoustics", "DSP"],
+    sourceUrl: "https://www.dafx.de/paper-archive/details/BPzlG_JAe0g9WudN6kkbng",
+    pdfUrl: "https://www.dafx.de/paper-archive/2026/papers/DAFx26_demo_57.pdf",
   },
 ];
 

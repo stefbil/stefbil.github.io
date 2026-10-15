@@ -3,6 +3,16 @@ import ScrollReveal from "./ScrollReveal";
 
 const experiences = [
   {
+    title: "MSc Thesis Researcher - AI Department",
+    company: "Bang & Olufsen",
+    period: "2026 – May 2027",
+    description: [
+      "Master's thesis and internship in the AI department",
+      "Presented internally on spatial audio listening experiences through loudspeaker engineering",
+    ],
+    type: "primary",
+  },
+  {
     title: "Software Engineer - ML/AI Engineer",
     company: "Center for Research and Technology Hellas (CERTH)",
     period: "Dec 2022 – Dec 2023",
@@ -13,6 +23,15 @@ const experiences = [
       "Utilized Docker for standardized deployment environments",
     ],
     type: "primary",
+  },
+  {
+    title: "Research Assistant (unpaid) - Electroacoustics Lab",
+    company: "Aristotle University of Thessaloniki",
+    period: "Jan 2024 – Aug 2025",
+    description: [
+      "Research in the Electroacoustics Laboratory under Prof. George Papanikolaou",
+    ],
+    type: "secondary",
   },
   {
     title: "Teaching Assistant",
@@ -41,7 +60,7 @@ const experiences = [
     description: [
       "Managed digital rights and distribution for 10M+ streams catalog",
       "Analyzed cross-platform listener data to optimize release strategies",
-      "Achieved 20,000+ monthly listeners on Spotify",
+      "Reached 10,000+ monthly listeners on Spotify",
     ],
     type: "primary",
   },

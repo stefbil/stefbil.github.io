@@ -1,38 +1,7 @@
-import { Mail, Linkedin, Github, Music, Youtube } from "lucide-react";
+import { Mail } from "lucide-react";
+import { socialLinks, linkTarget } from "@/data/socials";
 import ScrollReveal from "./ScrollReveal";
 
-const socialLinks = [
-  {
-    icon: Mail,
-    label: "Email",
-    href: "mailto:stefanosbiliousis@gmail.com",
-    color: "hover:text-primary hover:border-primary",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/stefanosbiliousis",
-    color: "hover:text-[#0A66C2] hover:border-[#0A66C2]",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    href: "https://github.com/stefbil",
-    color: "hover:text-foreground hover:border-foreground",
-  },
-  {
-    icon: Music,
-    label: "Spotify",
-    href: "https://open.spotify.com/artist/6BxtVo9reMQ2vff0l8HMGY",
-    color: "hover:text-[#1DB954] hover:border-[#1DB954]",
-  },
-  {
-    icon: Youtube,
-    label: "YouTube",
-    href: "https://www.youtube.com/c/canonblade",
-    color: "hover:text-[#FF0000] hover:border-[#FF0000]",
-  },
-];
 
 const Contact = () => {
   return (
@@ -63,13 +32,12 @@ const Contact = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <div className="flex items-center justify-center gap-4">
+            <div id="contact-socials" className="flex flex-wrap items-center justify-center gap-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...linkTarget(social.href)}
                   className={`p-4 rounded-full border border-border bg-card transition-all duration-200 hover:scale-110 ${social.color}`}
                   aria-label={social.label}
                 >

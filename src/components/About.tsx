@@ -5,7 +5,7 @@ const highlights = [
   {
     icon: GraduationCap,
     title: "MSc Sound and Music Computing",
-    description: "Media Technology, Aalborg University",
+    description: "Aalborg University Copenhagen · Thesis at Bang & Olufsen",
     color: "text-primary",
   },
   {
@@ -23,7 +23,7 @@ const highlights = [
   {
     icon: Music,
     title: "10M+ Streams",
-    description: "Independent artist with 20K+ monthly listeners",
+    description: "Independent artist with 10K+ monthly listeners",
     color: "text-accent",
   },
 ];
@@ -46,7 +46,7 @@ const About = () => {
                 spanning 
                 <span className="text-foreground font-medium"> Machine Learning</span>,
                 <span className="text-foreground font-medium"> Digital Signal Processing</span>,
-                <span className="text-foreground font-medium"> Data Engineering </span> 
+                <span className="text-foreground font-medium"> Spatial Audio </span> 
                 and 
                 <span className="text-foreground font-medium"> Sound Engineering</span>.
               </p>

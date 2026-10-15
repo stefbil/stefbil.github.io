@@ -1,9 +1,10 @@
 import { MapPin, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { socialLinks, linkTarget } from "@/data/socials";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pb-40">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
       <motion.div
@@ -104,9 +105,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span className="text-primary font-medium">Electrical and Computer Engineer</span>
+          <span className="text-primary font-medium">Audio DSP &amp; ML Engineer</span>
           <span className="mx-2">×</span>
-          <span className="text-accent font-medium">Sound Engineer</span>
+          <span className="text-accent font-medium">Spatial Audio &amp; Perception</span>
         </motion.p>
 
         <motion.p
@@ -115,8 +116,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Electrical and Computer Engineer (M.Eng) graduate. MSc Student in Media Technology combining advanced Data Engineering with 
-          specialized expertise in Audio Technology, DSP, and Machine Learning.
+          MSc student in Sound and Music Computing at Aalborg University Copenhagen, writing my thesis in the AI department at
+          Bang &amp; Olufsen. I build real-time audio systems for spatial rendering and adaptive processing, and test them with listening experiments.
         </motion.p>
 
         <motion.div
@@ -141,8 +142,32 @@ const Hero = () => {
 
       </div>
 
+      <motion.nav
+        aria-label="Social links"
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:gap-3"
+        initial="hidden"
+        animate="shown"
+        variants={{ shown: { transition: { staggerChildren: 0.06, delayChildren: 0.6 } } }}
+      >
+        {socialLinks.map((social) => (
+          <motion.a
+            key={social.label}
+            href={social.href}
+            {...linkTarget(social.href)}
+            aria-label={social.label}
+            title={social.label}
+            variants={{ hidden: { opacity: 0, y: 16 }, shown: { opacity: 1, y: 0 } }}
+            whileHover={{ scale: 1.12 }}
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+            className={`p-2.5 rounded-full border border-border bg-card/60 backdrop-blur text-muted-foreground transition-colors duration-200 ${social.color}`}
+          >
+            <social.icon size={18} />
+          </motion.a>
+        ))}
+      </motion.nav>
+
       <motion.div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{
           duration: 2,
